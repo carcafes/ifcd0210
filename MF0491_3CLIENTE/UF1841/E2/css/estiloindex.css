@@ -1,0 +1,100 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+}
+
+h1 {
+    text-align: center;
+    color: #dc4f00;
+    border: 5px;
+    border-color: red;
+    background-color: black;
+    margin-left: 26%;
+    margin-right: 27%;
+    border-radius: 5px;
+    font-size: 4em;
+}
+
+.fondo {
+    background-image: url("../imagenes/fondoindex.jpg");
+    background-size: cover;
+    background-color: orange;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    z-index: -1;
+
+}
+
+.contenido {
+    margin-top: ;
+    z-index: 0;
+}
+
+div#logo {
+    background-image: url("../imagenes/logo.png");
+    height: 316px;
+    width: 219px;
+    background-size: cover;
+    z-index: 0;
+    margin-left: 41%;
+
+}
+
+.boton1 {
+    background: black;
+    position: absolute;
+    color: #dc4f00;
+    height: 10vh;
+    width: 33vw;
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: center;
+    padding-top: 2vh;
+    font-size: 3em;
+}
+
+.boton2 {
+    background: black;
+    position: absolute;
+    color: #dc4f00;
+    height: 10vh;
+    width: 33vw;
+    margin-bottom: 0;
+    margin-left: 33vw;
+    text-align: center;
+    padding-top: 2vh;
+    font-size: 3em;
+}
+
+.boton3 {
+    background: black;
+    position: absolute;
+    color: #dc4f00;
+    height: 10vh;
+    width: 34vw;
+    margin-bottom: 0;
+    margin-left: 66vw;
+    text-align: center;
+    padding-top: 2vh;
+    font-size: 3em;
+}
+.linea-negra{
+	background:black;
+	margin-top:90%;
+	height:5%;
+	width:100%;
+	z-index:2; 
+	position: absolute;
+}
+a {}
+
+a:hover {
+    background: #2a2a2a;
+
+}
