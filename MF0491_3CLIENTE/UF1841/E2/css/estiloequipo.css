@@ -1,16 +1,17 @@
 html,
 body {
     width: 400vw;
- 
-  margin: 0;
-  padding: 0;
-	scroll-behavior:smooth;
+
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 
 }
-body{
-	overflow-x:hidden;
-  -webkit-scroll-snap-type: mandatory;
--webkit-scroll-snap-points-x: repeat(100vw);
+
+body {
+    overflow-x: hidden;
+    -webkit-scroll-snap-type: mandatory;
+    -webkit-scroll-snap-points-x: repeat(100vw);
 
 }
 
@@ -18,51 +19,69 @@ h1 {
     font-size: 4em;
     text-align: center;
 }
+h2 {
+margin-left: 5vw;
+font-size: 2em;
+}
+
+a {
+
+}
+
+a:hover {
+    background: #2a2a2a;
+
+}
 
 .fondo {
-    
+
     background-size: cover;
     background-color: orange;
     width: 400vw;
-    
+
     margin-top: 0vw;
     z-index: -1;
-    
+
 }
-.contenedor1{
-    width:100vw;
-    height:auto;
-background-color: red;
-background-size: cover; 
-overflow-y:scroll;
-overflow-y:hidden;
+
+.contenedor1 {
+    width: 100vw;
+    height: auto;
+    background-color: red;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-y: hidden;
 }
-.contenedor2{
-    width:100vw;
-    height:auto;
-background-color: orange;
-overflow-y:scroll;
-background-size: cover;
+
+.contenedor2 {
+    width: 100vw;
+    height: auto;
+    background-color: orange;
+    overflow-y: scroll;
+    background-size: cover;
 }
-.contenedor3{
-    width:100vw;
-    height:auto;
-background-color: red;
-overflow-y:scroll;
-background-size: cover;
+
+.contenedor3 {
+    width: 100vw;
+    height: auto;
+    background-color: red;
+    overflow-y: scroll;
+    background-size: cover;
 }
-.contenedor4{
-width:100vw;
-    height:auto;
-background-color: orange;
-overflow-y:scroll;
-background-size: cover;
+
+.contenedor4 {
+    width: 100vw;
+    height: auto;
+    background-color: orange;
+    overflow-y: scroll;
+    background-size: cover;
 }
-.fondo div{
-  	
- 	
-scroll-snap-type: mandatory;
-scroll-snap-points-x: repeat(100vw);
+
+.fondo div {
+
+
+    scroll-snap-type: mandatory;
+    scroll-snap-points-x: repeat(100vw);
 
 }
 
@@ -81,19 +100,19 @@ scroll-snap-points-x: repeat(100vw);
 
 
 #fundacion {
-    width: 85vw; 
-    
-    margin-left:5vw;
+    width: 85vw;
+
+    margin-left: 5vw;
     margin-right: 10vw;
     position: absolute;
-     
-    
+
+
 }
 
 #crece {
-    width: 85vw; 
-    
-    margin-left:105vw;
+    width: 85vw;
+
+    margin-left: 105vw;
     margin-right: 10vw;
     position: absolute;
 
@@ -101,22 +120,23 @@ scroll-snap-points-x: repeat(100vw);
 
 #europa {
     width: 85vw;
-    
-    margin-left:205vw;
+
+    margin-left: 205vw;
     margin-right: 10vw;
     position: absolute;
-     
+
 }
 
-#ab{
-	width: 85vw;
-     
-    margin-left:305vw;
+#ab {
+    width: 85vw;
+
+    margin-left: 305vw;
     margin-right: 10vw;
     position: absolute;
-     
+
 
 }
+
 #boton1 {
     background: black;
     position: absolute;
@@ -128,6 +148,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton2 {
@@ -141,6 +162,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton3 {
@@ -154,7 +176,9 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
+
 #boton4 {
     background: black;
     position: absolute;
@@ -166,6 +190,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton5 {
@@ -179,6 +204,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton6 {
@@ -192,7 +218,9 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
+
 #boton7 {
     background: black;
     position: absolute;
@@ -204,6 +232,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton8 {
@@ -217,6 +246,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton9 {
@@ -230,7 +260,9 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
+
 #boton10 {
     background: black;
     position: absolute;
@@ -242,6 +274,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton11 {
@@ -255,6 +288,7 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
 #boton12 {
@@ -268,10 +302,225 @@ scroll-snap-points-x: repeat(100vw);
     text-align: center;
     padding-top: 2vh;
     font-size: 3em;
+    z-index: 1;
 }
 
-#a1{}
-a:hover {
-    background: #2a2a2a;
+
+
+#botonesp1 {
+    top: 190vh;
+    left: 0px;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp2 {
+    top: 190vh;
+    left: 33vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp3 {
+    top: 190vh;
+    left: 66vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 34vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp4 {
+    top: 190vh;
+    left: 100vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp5 {
+    top: 190vh;
+    left: 133vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp6 {
+    top: 190vh;
+    left: 166vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 34vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp7 {
+    top: 190vh;
+    left: 200vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp8 {
+    top: 190vh;
+    left: 233vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+
+}
+
+#botonesp9 {
+    top: 190vh;
+    left: 266vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 34vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp10 {
+    top: 190vh;
+    left: 300vw;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+}
+
+#botonesp11 {
+    left: 333vw;
+    top: 190vh;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 33vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+
+
+}
+
+#botonesp12 {
+    left: 366vw;
+    top: 190vh;
+    position: absolute;
+    float: left;
+    height: 10vh;
+    width: 34vw;
+    text-align: center;
+    background: black;
+    color: #dc4f00;
+    font-size: 2.5em;
+    z-index: 1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
 
 }
