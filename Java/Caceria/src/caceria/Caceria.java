@@ -19,10 +19,10 @@ public class Caceria {
     public static void main(String[] args) {
     	
     	//Personajes
-    	int leon;
-    	boolean leoncorrecto;
-    	int gacela;
-    	boolean gacelacorrecto;
+    	int leon = 0;
+    	boolean leoncorrecto = false;
+    	int gacela = 0;
+    	boolean gacelacorrecto = false;
     	
     	
     	
@@ -34,21 +34,23 @@ public class Caceria {
         n = n + 5;
         
         //gacela
-        Gacela Gacela = new Gacela(0, 0, 0, 3);
+        Gacela Gacela = new Gacela(0, 0, 0, 3, 0, false,false);
         
         
         
         //leon
-        Leon Leon = new Leon(0, false, false, false);
+        Leon Leon = new Leon(0 , 1, false, false, false, false);
         
         //inicializar Gacela
-        
-        gacelacorrecto = false;
         Gacela.setPosicion(n);
+        Gacela.posLeon = Leon.posicion;
+        Leon.posGacela = Gacela.posicion;
+        
         
         //inicializar leon
         Leon.setPosicion(0);
-        leoncorrecto=false;
+        
+        
         
         //titulo
         System.out.println("						Juego de cazeria: ");
@@ -74,7 +76,7 @@ public class Caceria {
         
       //Realentizar X2?
         try {
-			TimeUnit.SECONDS.sleep(6);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -95,9 +97,10 @@ public class Caceria {
         System.out.println("		Y Cazar, que gana si esta en la casilla contigua a la gacela.");
         System.out.println(" ");
         System.out.println(" ");
+        
       //Realentizar X3?
         try {
-			TimeUnit.SECONDS.sleep(8);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -114,45 +117,148 @@ public class Caceria {
        
       //Realentizar X4?
         try {
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
 		}
-        //Scanner leon
-        Scanner scleon = new Scanner(System.in);
+        
+        //chequeos
+        if(Gacela.posicion - Leon.posicion < 5) {Leon.setCazando(true);}
+        else {Leon.setCazando(false);}
+        
+        //acciones leon
+        
+        do {
+        	if(Leon.cazando = false) {
+        		//opciones sin cazar
+        		try ( Scanner scleon = new Scanner(System.in);) { 
+        				System.out.println("El Leon no ve todavia a la gacela.");
+        				System.out.println("Accion leon:");
+        				System.out.println("1. Avanzar.");
+        				leon = scleon.nextInt();
+        														}
+        		catch(Exception ex){
+        				ex.printStackTrace();
+        						   } 
+        
+    
+        		switch(leon){
+        				case 1: leon = 1;
+        						Leon.Avanzar();
+        						leoncorrecto = true;
+        				default:System.out.println("Accion no existente.");
+        					}
+        							 }
+        	//opciones cazando.
+        	 else {try (Scanner scleon = new Scanner(System.in);){
+        		 	System.out.println("El leon ve a la gacela a "+ Leon.posGacela +", es hora de cazar.");
+        			System.out.println("Accion leon:");
+        			System.out.println("1. Acechar.");
+        			System.out.println("2. Esconderse. ");
+        			System.out.println("3. Perseguir.");
+        			System.out.println("4. Cazar ");
+        			leon = scleon.nextInt();
+        														 }
+        	
+        		  catch(Exception ex){
+            //exception handling...do something (e.g., print the error message)
+        			ex.printStackTrace();
+        				   			 }
+        
+        
+        
+        
+        		  switch(leon){
+        
+        
+        		  		case 1: leon = 1;
+        		  				Leon.Acechar();
+        		  				leoncorrecto = true;
+        		  		case 2: leon = 2;
+        		  				Leon.Esconderse();
+        		  				leoncorrecto = true;
+        		  		case 3: leon = 3;
+        		  				Leon.Perseguir();
+        		  				leoncorrecto = true;
+        		  		case 4: leon = 4;
+        		  				Leon.Cazar();
+        		  				leoncorrecto = true;
+        		  		default:System.out.println("Accion no existente ");
+        		  				}
+        			}
+           }while (leoncorrecto=false);
+        
+        //inicializar habilidades leon
+        Gacela.leonEscondido = Leon.sigilo;
+        Gacela.posLeon = Leon.posicion;
+        //Gacela selector
         
         
         do {
-        if(Leon.cazando = true) {
-        System.out.println("Leon:");
-        System.out.println("1. Avanzar.");
-        leon = scleon.nextInt();
+        	if(Gacela.panico = true) {
+        			//acciones normales
+        		try ( Scanner scgacela = new Scanner(System.in);) { 
+        				System.out.println("Gacela:");
+        				System.out.println("1. Huir.");
+        				gacela = scgacela.nextInt();
+        			}
+        		catch(Exception ex){
+        				ex.printStackTrace();
+        						   } 
+        
     
-    	switch(leon){
-    case 1: Leon.Avanzar();leoncorrecto = true;;
-    default:System.out.println("Accion no existente.");}
-    }
+        		switch(gacela){
+        				case 1: gacela=1;
+        						Gacela.Huir();
+        						gacelacorrecto = true;
+        				default:System.out.println("Accion no existente,intentelo de nuevo.");}
+        							}
+        	//huida
+        	 else {try (Scanner scgacela = new Scanner(System.in);){
+        			System.out.println("Gacela:");
+        			System.out.println("1. Comer.");
+        			System.out.println("2. Beber. ");
+        			System.out.println("3. Observar.");
+        			gacela = scgacela.nextInt();
+        														   }
+        	
+        		  catch(Exception ex){
+            //exception handling...do something (e.g., print the error message)
+        			ex.printStackTrace();
+        				   			 }
         
-        else {System.out.println("Leon:");
-    
-        System.out.println("1. Acechar.");
-        System.out.println("2. Esconderse. ");
-        System.out.println("3. Perseguir.");
-        System.out.println("4. Cazar ");
-        leon = scleon.nextInt();
-        //acciones leon entrada
-        switch(leon){
+        		  switch(gacela){
         
         
-        case 1: Leon.Acechar();leoncorrecto = true;
-        case 2: Leon.Esconderse();leoncorrecto = true;
-        case 3: Leon.Perseguir();leoncorrecto = true;
-        case 4: Leon.Cazar();leoncorrecto = true;
-        default:System.out.println("Accion no existente ");}
-        }
-        }while (leoncorrecto=false);
+        		  		case 1: gacela = 1;
+        		  				Gacela.Comer();
+        		  				gacelacorrecto = true;
+        		  		case 2: gacela = 2;
+        		  				Gacela.Beber();
+        		  				gacelacorrecto = true;
+        		  		case 3: gacela = 3;
+        		  				Gacela.Observar();
+        		  				gacelacorrecto = true;
+        		  		default:System.out.println("Accion no existente ");
+        		  			   }
+        		   }
+           }while (gacelacorrecto=false);
         
+        
+        //chequeos de victoria.
+        if(Leon.cazado = true) {System.out.println("El leon gana.");}
+        if(Gacela.huyendo >= 5) {System.out.println("La gacela ha escapado");}
+        if(Gacela.huyendo >= 5 & Gacela.comida >= 3 & Gacela.bebida >= 3) {System.out.println("La gacela ha ganado");}
+        //fin de turno
+        if(Leon.ocultado = false) {Leon.ocultarse++;}
+        if(Gacela.observado = false) {Gacela.observar++;}
+        Leon.sigilo = false;
+        Leon.ocultado= false;
+        Gacela.observado = false;
+        Gacela.leonEscondido = false;
+        
+        System.out.println("El leon esta en "+ Leon.posicion + " y la gacela en "+ Gacela.posicion);
     }
     
 }

@@ -7,13 +7,23 @@ package caceria;
 
 
 public class Leon extends Felino implements Depredador{
-  int  posicion;
+  int   posicion;
+  int 	posGacela;
+  int   ocultarse;
   boolean cazando;
   boolean sigilo;
   boolean cazado;
   boolean ocultado;
   
-  public Leon(int posicion,boolean cazando,boolean ocultado,boolean cazado){
+  
+  
+  public Leon(int posicion, int ocultarse ,boolean cazando,boolean ocultado,boolean cazado,boolean sigilo){
+	  this.posicion = posicion;
+	  this.cazando = cazando;
+	  this.ocultado = ocultado;
+	  this.cazado = cazado;
+	  this.sigilo = sigilo;
+	  
   }
   
 
@@ -22,7 +32,7 @@ public class Leon extends Felino implements Depredador{
 
 	@Override
     public void Cazar() {
-    	if(Gacela.getPosicion() - Leon.getPosicion() <= 1) cazado=true;
+    	if(posGacela - posicion <= 1) cazado=true;
         
     }
 
@@ -47,8 +57,10 @@ public class Leon extends Felino implements Depredador{
 
     @Override
     public void Esconderse() {
-    	sigilo = true;
-    	ocultado = true;
+    	if(ocultarse > 0) {
+    		sigilo = true;
+    		ocultado = true;}
+    	else {System.out.println("El leon se entretuvo mirando mariposas.");}
         
     }
 
