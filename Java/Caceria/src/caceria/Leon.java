@@ -14,15 +14,17 @@ public class Leon extends Felino implements Depredador{
   boolean sigilo;
   boolean cazado;
   boolean ocultado;
+  boolean gacelaPanico;
   
   
   
-  public Leon(int posicion, int ocultarse ,boolean cazando,boolean ocultado,boolean cazado,boolean sigilo){
+  public Leon(int posicion, int ocultarse ,boolean cazando,boolean ocultado,boolean cazado,boolean sigilo, boolean gacelapanico){
 	  this.posicion = posicion;
 	  this.cazando = cazando;
 	  this.ocultado = ocultado;
 	  this.cazado = cazado;
 	  this.sigilo = sigilo;
+	  this.gacelaPanico = gacelapanico;
 	  
   }
   
@@ -44,9 +46,8 @@ public class Leon extends Felino implements Depredador{
 
     @Override
     public void Perseguir() {
-    	posicion++;
-    	posicion++;
-        
+    	if(gacelaPanico == true) {posicion++;posicion++;}
+    	else {posicion++;}
     }
 
     @Override
@@ -83,6 +84,54 @@ public class Leon extends Felino implements Depredador{
 	public void setSigilo(boolean sigilo) {
 		this.sigilo = sigilo;
 	}
+
+
+	public int getPosGacela() {
+		return posGacela;
+	}
+
+
+
+
+
+	public void setPosGacela(int posGacela) {
+		this.posGacela = posGacela;
+	}
+
+
+
+
+
+	public int getOcultarse() {
+		return ocultarse;
+	}
+
+
+
+
+
+	public void setOcultarse(int ocultarse) {
+		this.ocultarse = ocultarse;
+	}
+
+
+
+
+
+	public boolean isGacelaPanico() {
+		return gacelaPanico;
+	}
+
+
+
+
+
+	public void setGacelaPanico(boolean gacelaPanico) {
+		this.gacelaPanico = gacelaPanico;
+	}
+
+
+
 
 
 	public boolean isCazado() {

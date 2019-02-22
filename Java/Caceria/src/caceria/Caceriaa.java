@@ -11,7 +11,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
 
-public class Caceria {
+public class Caceriaa {
 
     /**
      * @param args the command line arguments
@@ -21,10 +21,10 @@ public class Caceria {
     	//Personajes
     	int leon = 0;
     	boolean leoncorrecto = false;
-    	int gacela = 0;
-    	boolean gacelacorrecto = false;
+    	
     	int  distancia;
     	boolean victoria = false;
+    	int contador = 1;
     	
     	
     	
@@ -61,7 +61,7 @@ public class Caceria {
         
         //Realentizar?
         try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class Caceria {
         
       //Realentizar X2?
         try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(6);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -104,7 +104,7 @@ public class Caceria {
         
       //Realentizar X3?
         try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(6);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -121,7 +121,7 @@ public class Caceria {
        
       //Realentizar X4?
         try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -210,67 +210,24 @@ public class Caceria {
         //inicializar habilidades leon
         Gacela.leonEscondido = Leon.sigilo;
         Gacela.posLeon = Leon.posicion;
-        //Gacela selector
-        
-        
-        do {
+        //Gacela.bot selector
+        switch(contador) {
+        	case 1 :Gacela.Observar();
+        	if(Gacela.panico == true) {contador = 4;}
+        	else {contador++;}
+        		break;
+        	case 2 : Gacela.Comer();
+        		contador++;
+        		break;
+        	case 3 : Gacela.Beber();
+        		contador++;
+        		break;
+        	case 4 : Gacela.Huir();
+        		break;
         	
-        	if(Gacela.panico == false) {
-        			//acciones normales
-        		System.out.println("Gacela:");
-    			System.out.println("1. Comer.");
-    			System.out.println("2. Beber. ");
-    			System.out.println("3. Observar.");
-    			
-				gacela = s.nextInt();
-				
-				
-    				   			 
-    
-    		  switch(gacela){
-    
-    
-    		  		case 1: gacela = 1;
-    		  				Gacela.Comer();
-    		  				gacelacorrecto = true;
-    		  				break;
-    		  		case 2: gacela = 2;
-    		  				Gacela.Beber();
-    		  				gacelacorrecto = true;
-    		  				break;
-    		  		case 3: gacela = 3;
-    		  				Gacela.Observar();
-    		  				gacelacorrecto = true;
-    		  				break;
-    		  		default:System.out.println("Accion no existente ");
-    		  				break;
-    		  			   }
-        				
-        							}
-        	//huida
-        	 else {
-        			
-        		  System.out.println("Gacela:");
-  				System.out.println("1. Huir.");
-  				
-  				gacela = s.nextInt();
-  				
-  				
-  		
-  
-
-  		switch(gacela){
-  				case 1: gacela=1;
-  						Gacela.Huir();
-  						gacelacorrecto = true;
-  						break;
-  				default:System.out.println("Accion no existente,intentelo de nuevo.");
-  						break;
-  					   }
-  						
-        		   }
-        	
-           }while (gacelacorrecto==false);
+        
+        }
+       
         
         
         //chequeos de victoria.
@@ -282,6 +239,7 @@ public class Caceria {
         						 Gacela.setPosicion(x);
         						 Gacela.setPanico(false);
         						 Leon.setCazando(false);
+        						 contador = 1;
         						}
         
         if(Gacela.huyendo >= 5 & Gacela.comida >= 3 & Gacela.bebida >= 3) {
@@ -291,6 +249,7 @@ public class Caceria {
         //fin de turno
         if(Leon.ocultado == false) {Leon.ocultarse++;}
         if(Gacela.observado == false) {Gacela.observar++;}
+        if(contador == 3) {contador = 1;}
        //reinicios
         Leon.sigilo = false;
         Leon.ocultado= false;

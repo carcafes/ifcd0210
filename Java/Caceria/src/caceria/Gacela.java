@@ -50,8 +50,8 @@ public class Gacela extends Bovido implements Presa{
     @Override
     public void Observar() {
     	if(observar > 0){observado = true; 
-    				    if(leonEscondido= false) {
-    						if(posicion - posLeon <= 5) {panico = true; System.out.println("La gacela ha visto un leon a " + posLeon + ".");}
+    				    if(leonEscondido == false) {
+    						if(posicion - posLeon <= 4) {panico = true; System.out.println("La gacela ha visto un leon a " + (posicion-posLeon) + ".");}
     					 	else {System.out.println("La gacela no ha visto ningun peligro.");}
     											 }
     				    else {System.out.println("La gacela no ha visto ningun peligro.");}
@@ -62,7 +62,7 @@ public class Gacela extends Bovido implements Presa{
 
     @Override
     public void Huir() {
-    	if(panico = true) {if(huyendo > 0){posicion++;posicion++;huyendo++;}
+    	if(panico == true) {if(huyendo > 0){posicion++;posicion++;huyendo++;}
     					   else 		  {posicion++;huyendo++;}	
     					  }
         
