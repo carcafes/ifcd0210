@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CALCULADORA</title>
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+    <script>
+        //Declaracion de variables
+            var num1 = 0;
+            var num2 = 0;
+            var opera;
+
+        //número presionado
+        function darNumero(numero){
+            if(num1==0 && num1 !== '0.'){
+                num1 = numero;
+            }else{
+                num1 += numero;
+            }
+            refrescar();
+        }
+
+        // coma 
+        function darComa(){
+            if(num1 == 0) {
+                num1 = '0.';
+            } else if(num1.indexOf('.') == -1) {
+                num1 += '.';
+            }
+            refrescar();
+        }
+
+        //limpiar
+        function darC(){
+            num1 = 0;
+            num2 = 0;
+            refrescar();
+        }
+
+
+        //operaciones
+        function operar(valor){
+            if (num1 == 0){
+                num1 = parseFloat(document.getElementById("valor_numero").value);
+            }
+            num2 = parseFloat(num1);
+            num1= 0;
+            opera = valor;
+        }
+
+        //switch
+            /*
+            suma = 1
+            resta = 2
+            multiplicacion = 3
+            division = 4
+            potencia = 5
+            MOD =  6
+        */
+
+        function esIgual(){
+            num1 = parseFloat(num1);
+            switch (opera){
+                case 1:
+                    num1 += num2;
+                    break;
+                case 2:
+                    num1 = num2 - num1;
+                    break;
+                case 3:
+                    num1 *= num2;
+                    break;
+                case 4:
+                    num1 = num2 / num1;
+                    break;
+                case 5:
+                    num1 = Math.pow(num2, num1);
+                    break;
+                case 6:
+                    num1 = num2 % num1;
+                    break;
+            }
+            refrescar();
+            num2 = parseFloat(num1);
+            num1 = 0;
+        }
+
+        function refrescar(){
+            document.getElementById("valor_numero").value = num1;
+        }
+    </script>
+</head>
+
+<body>
+    <header id="cabecera">Practica de examen UF1842_3</header>
+    <div id="contenido1">
+        <div class="titulo">Calculadora</div>
+        <table id="calculadora">
+            <tr>
+                <td colspan="5">
+                    <input type="text" id="valor_numero" maxlength="20" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" class="boton" id="potencia" value="^" onclick="operar(5)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="mod" value="%" onclick="operar(6)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="suma" value="+" onclick="operar(1)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="C" value="C" onclick="darC()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" class="boton" id="7" value="7" onclick="darNumero(7)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="8" value="8" onclick="darNumero(8)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="9" value="9" onclick="darNumero(9)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="resta" value="-" onclick="operar(2)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" class="boton" id="4" value="4" onclick="darNumero(4)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="5" value="5" onclick="darNumero(5)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="6" value="6" onclick="darNumero(6)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="multiplicacion" value="x" onclick="operar(3)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" class="boton" id="1" value="1" onclick="darNumero(1)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="2" value="2" onclick="darNumero(2)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="3" value="3" onclick="darNumero(3)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="division" value="/" onclick="operar(4)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="Button" class="boton" id="0" value="0" onclick="darNumero(0)">
+                </td>
+                <td>
+                    <input type="Button" class="boton" id="," value="," onclick="darComa()">
+                </td>
+                <td colspan=3>
+                    <input type="Button" class="boton" id="igual" value="=" onclick="esIgual()">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="contenido2">
+        <div class="titulo">Mi musica</div>
+        <iframe class= "video" width="452" height="450" src="https://www.youtube.com/embed/wCmOnZpRtqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>   
+        </iframe>
+
+    </div>
+    <div id="contenido3">
+        <div class="titulo">Imagenes</div>
+        <div class="jpg"></div>
+        <div class="png"></div>
+        <div class="gif"></div>
+
+    </div>
+</body>
+
+</html>

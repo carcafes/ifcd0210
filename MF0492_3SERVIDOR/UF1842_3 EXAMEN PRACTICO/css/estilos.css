@@ -1,0 +1,134 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background-color: #00FF5a;
+}
+
+#cabecera {
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+    border: 2px solid black;
+    margin-top: 0px;
+    z-index: 2;
+    background: #f0f059;
+    color: black;
+    font-size: 3em;
+}
+
+#contenido1 {
+    height:80vh;
+    width: 33vw;
+    background: cyan;
+    border: 1px solid black;
+    margin-top: 5vh;
+    
+    position: absolute;
+}
+.video{
+	margin-top:23px;
+}
+.titulo {
+    font-size: 3em;
+    border: 1px solid black;
+    width: 100%;
+    height: 50px;
+}
+
+#calculadora {
+    height: 320px;
+    width: 260px;
+    border: 3px solid #a1a1a1;
+    border-radius: 10px;
+    background: #D5d5d5;
+    margin-top: 75px;
+    margin-left: 75px;
+
+}
+#contenido2 {
+    height: 80vh;
+    width: 33vw;
+    background: grey;
+    border: 1px solid black;
+    margin-top: 5vh;
+    margin-left: 33vw;
+    position: absolute;
+}
+#contenido3 {
+    height: 80vh;
+    width: 34vw;
+    background: #bD2919;
+    border: 1px solid black;
+    margin-top: 5vh;
+    margin-left: 66vw;
+    position: absolute;
+}
+.jpg{
+	background-image: url("../imagenes/botw.jpg") ;
+	height: 160px;
+	width: 400;
+	background-size: cover;
+
+}
+.png{
+	background-image: url("../imagenes/pelota.png");
+	height: 125px;
+	width: 125px;
+	background-size: cover;
+}
+.gif{
+	background-image: url("../imagenes/sushi.gif");
+	height: 190px;
+	width: 100%;
+	background-size: cover;
+}
+
+.boton {
+    border-radius: 5px;
+    border: 2px;
+    background: #808080;
+}
+
+.boton:hover {
+    background: #404040;
+}
+
+
+
+#valor_numero {
+    height: 40px;
+    width: 140px;
+    margin-left: 10px;
+    padding-right: 75px;
+}
+
+input {
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+}
+
+#suma {}
+
+#resta {}
+
+#multiplicacion {}
+
+#dividir {}
+
+#mod {}
+
+#raiz {}
+
+#igual {
+    height: 40px;
+    width: 80px;
+    margin-right: 0px;
+    padding-right: 100px;
+    text-align: right;
+}
