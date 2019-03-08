@@ -28,6 +28,7 @@
        function gacelaComer() {
         refrescar();
            document.getElementById("pantalla_2").value = "La gacela come tranquilamente.";
+           wait(1);
            comida++;
 
        }
@@ -36,6 +37,7 @@
        function gacelaBeber() {
         refrescar();
            document.getElementById("pantalla_2").value = "La gacela bebe tranquilamente.";
+           wait(1);
            bebida++;
        }
 
@@ -44,26 +46,27 @@
        function gacelaObservar() {
            refrescar();
            document.getElementById("pantalla_2").value = "La gacela observa a su alrededor.";
+           wait(1);
            if (observar > 0) {
                observado = true;
                observar--;
                if (sigilo == false) {
-                   if (distancia <= 4) { panico = true; document.getElementById("pantalla_4").value = "La gacela ha visto un leon a " + distancia + "."; } 
-                   else { document.getElementById("pantalla_4").value = "La gacela no ha visto ningun peligro."; }
+                   if (distancia <= 4) { panico = true; document.getElementById("pantalla_4").value = "La gacela ha visto un leon a " + distancia + ".";wait(1); } 
+                   else { document.getElementById("pantalla_4").value = "La gacela no ha visto ningun peligro.";wait(1); }
                                     } 
-               else { document.getElementById("pantalla_4").value = "La gacela no ha visto ningun peligro."; }
+               else { document.getElementById("pantalla_4").value = "La gacela no ha visto ningun peligro.";wait(1); }
                               }
-           else { document.getElementById("pantalla_4").value ="La gacela se entretuvo mirando mariposas."; }
+           else { document.getElementById("pantalla_4").value ="La gacela se entretuvo mirando mariposas.";wait(1); }
 
                                 }
 
        function gacelaHuir() {
         refrescar();
-           if (panico == true) {document.getElementById("pantalla_2").value = "La gacela huye del leon.";
+           if (panico == true) {document.getElementById("pantalla_2").value = "La gacela huye del leon.";wait(1);
                if (huyendo > 0) { posGacela++;posGacela++;huyendo++; } 
                else { posGacela++;huyendo++; }
                                }
-           else{document.getElementById("pantalla_2").value = "La gacela se entretuvo mirando mariposas.";}
+           else{document.getElementById("pantalla_2").value = "La gacela se entretuvo mirando mariposas.";wait(1);}
                               }
 
 
@@ -80,14 +83,15 @@
        function leonCazar() {
         refrescar();
         
-           if (distancia <= 1) {cazado = true;document.getElementById("pantalla_2").value = "El leon se come a la gacela.";}
-           else{posLeon++; document.getElementById("pantalla_2").value = "El leon salto hacia la gacela, pero no consigio alcanzarla.";}
+           if (distancia <= 1) {cazado = true;document.getElementById("pantalla_2").value = "El leon se come a la gacela.";wait(1);}
+           else{posLeon++; document.getElementById("pantalla_2").value = "El leon salto hacia la gacela, pero no consigio alcanzarla.";wait(1);}
 
        }
 
        function leonAvanzar() {
         refrescar();
         document.getElementById("pantalla_2").value = "El leon avanza.";
+        wait(1);
            posLeon++;
 
        }
@@ -95,8 +99,8 @@
        function leonPerseguir() {
         refrescar();
         
-           if (panico == true) { posLeon++;posLeon++;document.getElementById("pantalla_2").value = "El leon se lanza a perseguir a la gacela."; } 
-           else { posLeon++;document.getElementById("pantalla_2").value = "El leon se acerca a la gacela."; }
+           if (panico == true) { posLeon++;posLeon++;document.getElementById("pantalla_2").value = "El leon se lanza a perseguir a la gacela.";wait(1); } 
+           else { posLeon++;document.getElementById("pantalla_2").value = "El leon se acerca a la gacela.";wait(1); }
        }
 
        function leonAcechar() {
@@ -108,8 +112,8 @@
 
        function leonEsconderse() {
             refrescar();
-             if (ocultarse > 0) {ocultarse--; sigilo = true; ocultado = true;document.getElementById("pantalla_2").value = "El leon se escondio.";}
-           else {document.getElementById("pantalla_2").value = "El leon se entretuvo mirando mariposas."; }
+             if (ocultarse > 0) {ocultarse--; sigilo = true; ocultado = true;document.getElementById("pantalla_2").value = "El leon se escondio.";wait(1);}
+           else {document.getElementById("pantalla_2").value = "El leon se entretuvo mirando mariposas.";wait(1); }
 
        }
        //pantalla
@@ -137,7 +141,8 @@
             document.getElementById("pantalla_4").value = "";
             document.getElementById("pantalla_5").value = "";
             document.getElementById("pantalla_6").value = "";
-            setTimeout(Informacion1(),2000);
+            wait(2);
+            Informacion1();
         }
         function Informacion1(){
            document.getElementById("pantalla_1").value = "";
@@ -146,7 +151,8 @@
            document.getElementById("pantalla_4").value = "";
            document.getElementById("pantalla_5").value = "";
            document.getElementById("pantalla_6").value = "";
-           setTimeout(Informacion2(),2000);
+           wait(2);
+           Informacion2();
          }
          function Informacion2(){
           document.getElementById("pantalla_1").value = "";
@@ -155,7 +161,8 @@
            document.getElementById("pantalla_4").value = "       o la gazela comiendo, bebiendo y escapando. ";
            document.getElementById("pantalla_6").value = "";
            document.getElementById("pantalla_5").value = "";
-           setTimeout(Comojugar1(),2000);
+          wait(2);
+          Comojugar1();
            
          }
          function Comojugar1(){
@@ -165,7 +172,8 @@
            document.getElementById("pantalla_4").value = "";
            document.getElementById("pantalla_5").value = "        Una vez se han encontrado empieza la accion.";
            document.getElementById("pantalla_6").value = "        Si la gacela ve al leon podra huir.";
-           setTimeout(Comojugar2(),2000);
+           wait(2);
+           Comojugar2();
          }
          function Comojugar2(){
            document.getElementById("pantalla_1").value = "";
@@ -174,7 +182,8 @@
            document.getElementById("pantalla_4").value = "        - Esconderse: se agazapa escondido para que no le vean.";
            document.getElementById("pantalla_5").value = "        - Perseguir: avanza dos casillas si le han visto.";
            document.getElementById("pantalla_6").value = "        Y Cazar, que gana si esta en la casilla contigua a la gacela.";
-           setTimeout(Comojugar3(),2000);
+           wait(2);
+           Comojugar3();
          }
          function Comojugar3(){
            document.getElementById("pantalla_1").value = "";
@@ -183,7 +192,8 @@
            document.getElementById("pantalla_4").value = "        Si la gazela escapa pero no ha comido suficiente se volvera a empezar hasta que haya comido y bebido suficiente.";
            document.getElementById("pantalla_5").value = "";
            document.getElementById("pantalla_6").value = "";
-           setTimeout(pasar_turno(),2000);
+           wait(2);
+           pasar_turno();
          }
          function Leon1(){
            document.getElementById("pantalla_1").value = "";
@@ -216,7 +226,7 @@ function switch_leon_if(){
                        
                                  }
                                  leon=0;
-                                 setTimeout(chequeos_pregacela(),15000);
+                                 chequeos_pregacela();
 }
 function switch_leon_else(){
 	switch (leon) {
@@ -245,8 +255,7 @@ function switch_leon_else(){
                        
                                  }
                                  
-                                 setTimeout(chequeos_pregacela(),15000);
-}
+                                 chequeos_pregacela();
 
 function wait(nsegundos){
 	objetivo= (new Date()).getTime() + 1000*Math.abs(nsegundos);
@@ -286,7 +295,8 @@ function wait(nsegundos){
                    //opciones sin cazar
                    refrescar();
                    Leon1();
-                   setTimeout(switch_leon_if(),15000);
+                   wait(5);
+                   switch_leon_if();
 
                    
                                     }
@@ -294,7 +304,8 @@ function wait(nsegundos){
                else {
                 refrescar();
                 Leon2();
-                setTimeout(switch_leon_else(),15000);
+                wait(5);
+                switch_leon_else();
                    
 
                    
@@ -313,6 +324,7 @@ function wait(nsegundos){
            if (cazado == true) {
             refrescar();
             document.getElementById("pantalla_3").value = "El leon gana.";
+            wait(5);
             victoria = true;
             turno_gacela();
         }
@@ -363,6 +375,7 @@ function wait(nsegundos){
            if (huyendo >= 5) {
               refrescar();
               document.getElementById("pantalla_3").value ="La gacela ha escapado";
+              wait(2);
                posLeon=0;
                posGacela= x;
                panico = false
@@ -373,6 +386,7 @@ function wait(nsegundos){
            if (huyendo >= 5 & comida >= 3 & bebida >= 3) {
                refrescar();
               document.getElementById("pantalla_3").value ="La gacela ha ganado";
+              wait(2);
                victoria = true;
                                                          }
            //fin de turno
