@@ -1,0 +1,57 @@
+html,body{
+	overflow:hidden;
+	margin:0;
+	padding: 0;
+}
+#pantalla{
+	width: 50vw;
+	height:135px;
+	border-radius: 5px;
+	border:2px solid black;
+}
+#pantalla_1{
+	height:20px;
+	width:50vw;
+	z-index: 1;
+	position: absolute;
+	margin-top:0px;
+}
+#pantalla_2{
+	height:20px;
+	width:50vw;
+	z-index: 1;
+	position: absolute;
+	margin-top:23px;
+}
+#pantalla_3{
+	height:20px;
+	width:50vw;
+	z-index: 1;
+	position: absolute;
+	margin-top:46px;
+}
+#pantalla_4{
+	height:20px;
+	width:50vw;
+	z-index: 1;
+	position: absolute;
+	margin-top:69px;
+}
+#pantalla_5{
+	height:20px;
+	width:50vw;
+	z-index: 1;
+	position: absolute;
+	margin-top:92px;
+}
+#pantalla_6{
+	height:20px;
+	width:50vw;
+	z-index: 1;
+	position: absolute;
+	margin-top:115px;
+}
+#b1{}
+#b2{}
+#b3{}
+#b4{}
