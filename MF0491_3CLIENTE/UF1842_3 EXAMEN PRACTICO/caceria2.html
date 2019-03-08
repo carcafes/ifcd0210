@@ -5,14 +5,12 @@
 	<title>Caceria</title>
 	<link type="text/css" rel="stylesheet" href="./css/estilo.css">
 	<script>       //variables neutras
-       var distancia;
-       var victoria = false;
+          var victoria = false;
        var contador = 1;
 
        //Numero aleatorio
        var n;
        var x;
-      
        n = Math.floor(Math.random() * 4); 
        n = n + 5;
 
@@ -123,6 +121,14 @@
             document.getElementById("pantalla_5").value = "";
             document.getElementById("pantalla_6").value = "";
         }
+    
+
+       //informacion
+       
+       
+       
+       
+   
 
         function Presentacion(){
             document.getElementById("pantalla_1").value = "";
@@ -131,6 +137,7 @@
             document.getElementById("pantalla_4").value = "";
             document.getElementById("pantalla_5").value = "";
             document.getElementById("pantalla_6").value = "";
+            setTimeout(Informacion1(),2000);
         }
         function Informacion1(){
            document.getElementById("pantalla_1").value = "";
@@ -139,6 +146,7 @@
            document.getElementById("pantalla_4").value = "";
            document.getElementById("pantalla_5").value = "";
            document.getElementById("pantalla_6").value = "";
+           setTimeout(Informacion2(),2000);
          }
          function Informacion2(){
           document.getElementById("pantalla_1").value = "";
@@ -147,6 +155,7 @@
            document.getElementById("pantalla_4").value = "       o la gazela comiendo, bebiendo y escapando. ";
            document.getElementById("pantalla_6").value = "";
            document.getElementById("pantalla_5").value = "";
+           setTimeout(Comojugar1(),2000);
            
          }
          function Comojugar1(){
@@ -156,6 +165,7 @@
            document.getElementById("pantalla_4").value = "";
            document.getElementById("pantalla_5").value = "        Una vez se han encontrado empieza la accion.";
            document.getElementById("pantalla_6").value = "        Si la gacela ve al leon podra huir.";
+           setTimeout(Comojugar2(),2000);
          }
          function Comojugar2(){
            document.getElementById("pantalla_1").value = "";
@@ -164,6 +174,7 @@
            document.getElementById("pantalla_4").value = "        - Esconderse: se agazapa escondido para que no le vean.";
            document.getElementById("pantalla_5").value = "        - Perseguir: avanza dos casillas si le han visto.";
            document.getElementById("pantalla_6").value = "        Y Cazar, que gana si esta en la casilla contigua a la gacela.";
+           setTimeout(Comojugar3(),2000);
          }
          function Comojugar3(){
            document.getElementById("pantalla_1").value = "";
@@ -172,6 +183,7 @@
            document.getElementById("pantalla_4").value = "        Si la gazela escapa pero no ha comido suficiente se volvera a empezar hasta que haya comido y bebido suficiente.";
            document.getElementById("pantalla_5").value = "";
            document.getElementById("pantalla_6").value = "";
+           setTimeout(pasar_turno(),2000);
          }
          function Leon1(){
            document.getElementById("pantalla_1").value = "";
@@ -180,6 +192,7 @@
            document.getElementById("pantalla_4").value = "        1. Avanzar.";
            document.getElementById("pantalla_5").value = "";
            document.getElementById("pantalla_6").value = "";
+           
          }
          function Leon2(){
            document.getElementById("pantalla_1").value = "        El leon ve a la gacela a " + distancia + ", es hora de cazar.";
@@ -188,114 +201,123 @@
            document.getElementById("pantalla_4").value = "        2. Esconderse.";
            document.getElementById("pantalla_5").value = "        3. Perseguir.";
            document.getElementById("pantalla_6").value = "        4. Cazar. ";
+           
          }
          function setLeon(numero){
           leon= numero;
 }
-         
-       function main(){  
-         
-         
-
-       //titulo
-       Presentacion();
-
-       //informacion
-       setTimeout(Informacion1(), 2000);
-       setTimeout(Informacion2(), 3000);
-
-
-       //Como jugar
-       setTimeout(Comojugar1(), 3000);
-       setTimeout(Comojugar2(), 3000);
-       setTimeout(Comojugar3(), 3000);
-
-
-       do {
-
-           //chequeos
-
-           distancia = posGacela - posLeon;
-           if (distancia <= 4) { cazando = true; } else { cazando = false; }
-
-           //nueva posicion
-
-           
-           x = Math.floor(Math.random() * 6); 
-           x = x + 3;
-
-           //acciones leon
-
-           do {
-
-               if (cazando == false) {
-                   //opciones sin cazar
-                   refrescar();
-                   Leon1();
-                   
-
-                   switch (leon) {
+function switch_leon_if(){
+	switch (leon) {
                        case 1:
                            leon = 1;
                            leonAvanzar();
-                           leoncorrecto = true;
+                           
                            break;
-                       default:
-                       refrescar();
-                       document.getElementById("pantalla_3").value = "Accion no existente.";
-                           break;
+                       
                                  }
                                  leon=0;
-                                    }
-               //opciones cazando.
-               else {
-                refrescar();
-                Leon2();
-                   
-
-                   switch (leon) {
+                                 setTimeout(chequeos_pregacela(),15000);
+}
+function switch_leon_else(){
+	switch (leon) {
 
 
                        case 1:
                            leon = 1;
                            leonAcechar();
-                           leoncorrecto = true;
+                           
                            break;
                        case 2:
                            leon = 2;
                            leonEsconderse();
-                           leoncorrecto = true;
+                           
                            break;
                        case 3:
                            leon = 3;
                            leonPerseguir();
-                           leoncorrecto = true;
+                           
                            break;
                        case 4:
                            leon = 4;
                            leonCazar();
-                           leoncorrecto = true;
+                           
                            break;
-                       default:
-                       refrescar();
-                       document.getElementById("pantalla_3").value = "Accion no existente ";
-                           break;
+                       
                                  }
-                                 leon=0;
-                      }
+                                 
+                                 setTimeout(chequeos_pregacela(),15000);
+}
 
-               } while (leoncorrecto == false);
+function wait(nsegundos){
+	objetivo= (new Date()).getTime() + 1000*Math.abs(nsegundos);
+	while((new Date()).getTime() < objetivo);
+}
+
+         
+         
+     
+
+
+
+       
+ 	
+
+           //chequeos
+           function chequeo_preleon(){
+           distancia = posGacela - posLeon;
+           if (distancia <= 4) { cazando = true; } else { cazando = false; }
+           //nueva posicion
+           x = Math.floor(Math.random() * 6); 
+           x = x + 3;
+           turno_leon();
+
+}
+           
 
            
-           //chequeos
+           
 
+ 	
+           //acciones leon
+           		function turno_leon(){
+           
+
+               if (cazando == false) {
+                   //opciones sin cazar
+                   refrescar();
+                   Leon1();
+                   setTimeout(switch_leon_if(),15000);
+
+                   
+                                    }
+               //opciones cazando.
+               else {
+                refrescar();
+                Leon2();
+                setTimeout(switch_leon_else(),15000);
+                   
+
+                   
+                                 
+                      }
+
+               
+              }
+              
+   
+            
+
+           //chequeos
+           	function 	chequeos_pregacela(){
            distancia = posGacela - posLeon;
            if (cazado == true) {
             refrescar();
             document.getElementById("pantalla_3").value = "El leon gana.";
             victoria = true;
+            turno_gacela();
+        }
                                }
-
+			function turno_gacela(){
            //Gacela.bot selector
            if(victoria == false){
            switch (contador) {
@@ -322,12 +344,21 @@
 
 
                               }
+                              chequeos_finderonda();
                                 }
+                               
+
+ 	
+                            }
 
 
+
+ 	
+ 	
+ 	
 
            //chequeos de victoria.
-           
+           function chequeos_finderonda(){
 
            if (huyendo >= 5) {
               refrescar();
@@ -352,19 +383,23 @@
            sigilo = false;
            ocultado = false;
            observado = false;
-           
-
-
-       } while (victoria == false);
-       
-}
-
+           if(victoria == false){pasar_turno();}
+           								}
 
 
 	
+ 	
+
+function pasar_turno(){
+ if(victoria == false){chequeo_preleon();}
+
+
+ 	
+       
+ }
 	</script>
 </head>
-<body onload="main()">
+<body>
 	<div id="consola">
 	<div id="pantalla">
 	<input type="text" id="pantalla_1" maxlength="50" value=" " >
@@ -374,7 +409,7 @@
 	<input type="text" id="pantalla_5" maxlength="50" value=" " >
 	<input type="text" id="pantalla_6" maxlength="50" value=" " >
 	</div>
-	<input type="button" id="start" name="start" value="start" onclick="main()">
+	<input type="button" id="start" name="start" value="start" onclick="Presentacion()">
 	<input type="button" id="b1" name="1" value="1" onclick="setLeon(1)">
 	<input type="button" id="b2" name="2" value="2" onclick="setLeon(2)">
 	<input type="button" id="b3" name="3" value="3" onclick="setLeon(3)">

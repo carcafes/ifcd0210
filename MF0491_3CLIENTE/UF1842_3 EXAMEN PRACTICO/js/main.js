@@ -8,7 +8,6 @@
        //Numero aleatorio
        var n;
        var x;
-       Random rnd = new Random();
        n = Math.floor(Math.random() * 4); 
        n = n + 5;
 
