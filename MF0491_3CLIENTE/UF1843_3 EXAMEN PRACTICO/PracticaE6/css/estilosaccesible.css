@@ -1,0 +1,27 @@
+html,body{
+	margin:0;
+	padding: 0;
+	
+}
+p{
+	font-size:10;
+
+}
+#header
+#fondo{
+	background: #EEEEEE;
+}
+#contenido{
+	text-align: center;
+
+}
+#imagen1{
+	background: url("../imagenes/imagen1.jpg");
+	height: 600px;
+	width: 600px;
+}
+#imagen2{
+	background: url("../imagenes/imagen2.jpg");
+	height: 600px;
+	width: 600px;
+}

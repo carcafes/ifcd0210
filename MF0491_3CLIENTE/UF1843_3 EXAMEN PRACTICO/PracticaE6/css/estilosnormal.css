@@ -1,0 +1,48 @@
+html,body{
+	margin:0;
+	padding: 0;
+	height:auto;
+	width: 100vw;
+	background: #EEEEEE;
+	
+}
+h1{font-size: 2.3em;
+}
+p{
+	font-size:12pt;
+
+}
+#fondo{
+	
+	top: 0px;
+	padding:0;
+	margin-left: 4vw;
+	margin-right:5vw;
+	 
+}
+#contenido{
+	margin-left: 10vw;
+	margin-right:10vw; 
+	text-align: justify;
+
+}
+#imagen1{
+	background: url("../imagenes/imagen1.jpg");
+	height: 250px;
+	width: 250px;
+	background-size: cover;
+	border-radius: 25px;
+	margin-left: 26vw;
+}
+#imagen2{
+	background: url("../imagenes/imagen2.jpg");
+	height: 250px;
+	width: 250px;
+	background-size: cover;
+	border-radius: 25px;
+	margin-left: 26vw;
+}
+.textobajoimagen{
+	font-size:11px;
+	margin-left:26vw;
+}
