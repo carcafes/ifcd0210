@@ -1,3 +1,5 @@
+      
+
        //variables neutras
        var distancia;
        var victoria = false;
@@ -6,7 +8,6 @@
        //Numero aleatorio
        var n;
        var x;
-       Random rnd = new Random();
        n = Math.floor(Math.random() * 4); 
        n = n + 5;
 
@@ -187,7 +188,7 @@
           leon= numero;
 }
          
-       function start(){  
+       function main(){  
          
          
 
@@ -352,4 +353,5 @@
        } while (victoria == false);
        
 }
+window.onload = start();
       
