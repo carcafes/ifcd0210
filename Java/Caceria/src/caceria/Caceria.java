@@ -289,7 +289,7 @@ public class Caceria {
         	victoria=true;
         																  }
         //fin de turno
-        if(Leon.ocultado == false) {Leon.ocultarse++;}
+        if(Leon.ocultado == false) {Leon.esconderse++;}
         if(Gacela.observado == false) {Gacela.observar++;}
        //reinicios
         Leon.sigilo = false;

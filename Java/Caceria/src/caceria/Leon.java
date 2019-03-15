@@ -9,7 +9,7 @@ package caceria;
 public class Leon extends Felino implements Depredador{
   int   posicion;
   int 	posGacela;
-  int   ocultarse;
+  int   esconderse;
   boolean cazando;
   boolean sigilo;
   boolean cazado;
@@ -52,13 +52,13 @@ public class Leon extends Felino implements Depredador{
 
     @Override
     public void Acechar() {
-    	posicion++;;
+    	posicion++;
         
     }
 
     @Override
     public void Esconderse() {
-    	if(ocultarse > 0) {
+    	if(esconderse > 0) {
     		sigilo = true;
     		ocultado = true;}
     	else {System.out.println("El leon se entretuvo mirando mariposas.");}
@@ -102,16 +102,16 @@ public class Leon extends Felino implements Depredador{
 
 
 
-	public int getOcultarse() {
-		return ocultarse;
+	public int getEsconderse() {
+		return esconderse;
 	}
 
 
 
 
 
-	public void setOcultarse(int ocultarse) {
-		this.ocultarse = ocultarse;
+	public void setEsconderse(int esconderse) {
+		this.esconderse = esconderse;
 	}
 
 

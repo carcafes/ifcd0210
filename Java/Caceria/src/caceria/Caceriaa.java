@@ -10,14 +10,19 @@ package caceria;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.GraphicsConfiguration;
 
 public class Caceriaa {
 
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
     	
+        
     	//Personajes
     	int leon = 0;
     	boolean leoncorrecto = false;
@@ -53,6 +58,10 @@ public class Caceriaa {
         //inicializar leon
         Leon.setPosicion(0);
         Leon.setCazando(false);
+        //jframe
+        jframe interfaz = new jframe();
+                interfaz.setVisible(true);
+        leon= interfaz.leon;        
         
         
         
@@ -247,7 +256,7 @@ public class Caceriaa {
         	victoria=true;
         																  }
         //fin de turno
-        if(Leon.ocultado == false) {Leon.ocultarse++;}
+        if(Leon.ocultado == false) {Leon.esconderse++;}
         if(Gacela.observado == false) {Gacela.observar++;}
         if(contador == 3) {contador = 1;}
        //reinicios
