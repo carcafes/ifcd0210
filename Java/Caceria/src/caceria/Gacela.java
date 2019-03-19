@@ -51,7 +51,7 @@ public class Gacela extends Bovido implements Presa{
     public void Observar() {
     	if(observar > 0){observado = true; 
     				    if(leonEscondido == false) {
-    						if(posicion - posLeon <= 4) {panico = true; System.out.println("La gacela ha visto un leon a " + (posicion-posLeon) + ".");}
+    						if(posicion - posLeon <= 5) {panico = true; System.out.println("La gacela ha visto un leon a " + (posicion-posLeon) + ".");}
     					 	else {System.out.println("La gacela no ha visto ningun peligro.");}
     											 }
     				    else {System.out.println("La gacela no ha visto ningun peligro.");}

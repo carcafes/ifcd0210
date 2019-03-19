@@ -10,9 +10,7 @@ package caceria;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.Scanner;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.GraphicsConfiguration;
+
 
 public class Caceriaa {
 
@@ -70,7 +68,7 @@ public class Caceriaa {
         
         //Realentizar?
         try {
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -89,7 +87,7 @@ public class Caceriaa {
         
       //Realentizar X2?
         try {
-			TimeUnit.SECONDS.sleep(6);
+			TimeUnit.SECONDS.sleep(4);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -113,7 +111,7 @@ public class Caceriaa {
         
       //Realentizar X3?
         try {
-			TimeUnit.SECONDS.sleep(6);
+			TimeUnit.SECONDS.sleep(4);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
@@ -142,7 +140,7 @@ public class Caceriaa {
         //chequeos
         Leon.setGacelaPanico(Gacela.panico);
         distancia = Gacela.posicion - Leon.posicion;
-        if(distancia <= 4 ) {Leon.setCazando(true);}
+        if(distancia <= 5 ) {Leon.setCazando(true);}
         else {Leon.setCazando(false);}
         
         //nueva posicion
@@ -158,12 +156,19 @@ public class Caceriaa {
         	if(Leon.cazando == false) {
         		//opciones sin cazar
         		 
-        				System.out.println("El Leon no ve todavia a la gacela.");
+        	System.out.println("El Leon no ve todavia a la gacela.");
         				System.out.println("Accion leon:");
         				System.out.println("1. Avanzar.");
-               		 	leon = s.nextInt();
+                                        //Realentizar?
+                                         
                		 	
-        				System.out.println(leon);
+                                        try {
+                                         TimeUnit.SECONDS.sleep(5);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
+        				while(leon == 0){leon = interfaz.leon;}
         														
         		
         
@@ -173,22 +178,31 @@ public class Caceriaa {
         						Leon.Avanzar();
         						leoncorrecto = true;
         						break;
-        				default:System.out.println("Accion no existente.");
+        		default:System.out.println("Accion no existente.");
         						break;
         					}
         							 }
         	//opciones cazando.
         	 else {
-        		 	System.out.println("El leon ve a la gacela a "+ (Leon.posGacela-Leon.posicion) +", es hora de cazar.");
+        		 	System.out.println("El leon ve a la gacela a "+ 
+                                        (Leon.posGacela-Leon.posicion)
+                                        +", es hora de cazar.");
         			System.out.println("Accion leon:");
         			System.out.println("1. Acechar.");
         			System.out.println("2. Esconderse. ");
         			System.out.println("3. Perseguir.");
         			System.out.println("4. Cazar ");
+                                    
+                                        
         			
-           		 	leon = s.nextInt();
            		 	
-        			System.out.println(leon);
+           		 	try {
+                                         TimeUnit.SECONDS.sleep(5);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
+        			while(leon == 0){leon= interfaz.leon;};
         
         		  switch(leon){
         
@@ -209,7 +223,7 @@ public class Caceriaa {
         		  				Leon.Cazar();
         		  				leoncorrecto = true;
         		  				break;
-        		  		default:System.out.println("Accion no existente ");
+        		  default:System.out.println("Accion no existente ");
         		  				break;
         		  				}
         			}
@@ -222,16 +236,40 @@ public class Caceriaa {
         //Gacela.bot selector
         switch(contador) {
         	case 1 :Gacela.Observar();
+                try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         	if(Gacela.panico == true) {contador = 4;}
         	else {contador++;}
         		break;
         	case 2 : Gacela.Comer();
+                try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         		contador++;
         		break;
         	case 3 : Gacela.Beber();
+                try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         		contador++;
         		break;
         	case 4 : Gacela.Huir();
+                try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         		break;
         	
         
@@ -244,9 +282,10 @@ public class Caceriaa {
         						 victoria=true;
         						}
         
-        if(Gacela.huyendo >= 5) {System.out.println("La gacela ha escapado");Leon.setPosicion(0);
-        						 Gacela.setPosicion(x);
-        						 Gacela.setPanico(false);
+        if(Gacela.huyendo >= 5) {System.out.println("La gacela ha escapado");
+                                                           Leon.setPosicion(0);
+        						Gacela.setPosicion(x);
+        						Gacela.setPanico(false);
         						 Leon.setCazando(false);
         						 contador = 1;
         						}
@@ -264,7 +303,8 @@ public class Caceriaa {
         Leon.ocultado= false;
         Gacela.observado = false;
         Gacela.leonEscondido = false;
-        
+        interfaz.leon=0;
+        leon=0;
         
     }while(victoria == false);
         s.close();
