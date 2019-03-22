@@ -61,7 +61,7 @@ public class Leon extends Felino implements Depredador{
     	if(esconderse > 0) {
     		sigilo = true;
     		ocultado = true;}
-    	else {jTextArea1.setText("El leon se entretuvo mirando mariposas.");}
+    	else {interfaz.setjTextArea1("El leon se entretuvo mirando mariposas.");}
         
     }
 
