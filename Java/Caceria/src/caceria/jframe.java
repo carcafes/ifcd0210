@@ -5,6 +5,8 @@
  */
 package caceria;
 
+import javax.swing.JTextArea;
+
 /**
  *
  * @author pc
@@ -166,6 +168,10 @@ public class jframe extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    public void setjTextArea1(JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
 }

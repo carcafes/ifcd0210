@@ -26,6 +26,7 @@ public class Caceriaa {
     	boolean leoncorrecto = false;
     	
     	int  distancia;
+        int distancia2;
     	boolean victoria = false;
     	int contador = 1;
     	
@@ -64,7 +65,7 @@ public class Caceriaa {
         
         
         //titulo
-        System.out.println("						Juego de cazeria: ");
+        interfaz.jTextArea1.setText("                                           Juego de cazeria: ");
         
         //Realentizar?
         try {
@@ -75,15 +76,18 @@ public class Caceriaa {
 		}
         
         //informacion
-        System.out.println(" ");
-        System.out.println("						Informacion. ");
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("		El juego de cazeria nesesita de dos jugadores: Leon y gacela. ");
-        System.out.println("		El objetivo del juego es sobrevivir, ya sea el leon cazando a la gacela ");
-        System.out.println(" 		o la gazela comiendo, bebiendo y escapando. ");
-        System.out.println(" ");
-        System.out.println(" ");
+        
+        interfaz.jTextArea1.setText("		Informacion."
+                + "\n"
+                + "El juego de cazeria nesesita de dos jugadores:"
+                + "\n"
+                + " Leon y gacela."
+                + "\n"
+                + "El objetivo del juego es sobrevivir,"
+                + "\n"
+                + " ya sea el leon cazando a la gacela "
+                + "\n"
+                + "o la gazela comiendo, bebiendo y escapando. ");
         
       //Realentizar X2?
         try {
@@ -93,21 +97,30 @@ public class Caceriaa {
 			e.printStackTrace();
 		}
         //Como jugar
-        System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("		La gacela puede comer, beber y obsevar a su alrededor.");
-        System.out.println("		El leon debe avanzar hasta encontrar a la gacela. ");
-        System.out.println(" ");
-        System.out.println("		Una vez se han encontrado empieza la accion.");
-        System.out.println("		Si la gacela ve al leon podra huir.");
-        System.out.println(" ");
-        System.out.println("		Cuando el leon encuentra a la gacela gana acciones nuevas.");
-        System.out.println("		- Acechar: avanza una casilla en silencio.");
-        System.out.println("		- Esconderse: se agazapa escondido para que no le vean.");
-        System.out.println("		- Perseguir: avanza dos casillas si le han visto.");
-        System.out.println("		Y Cazar, que gana si esta en la casilla contigua a la gacela.");
-        System.out.println(" ");
-        System.out.println(" ");
+        
+        
+        interfaz.jTextArea1.setText(
+                "\n"
+        + "	La gacela puede comer, beber y obsevar a su alrededor."
+        + "\n"
+        + "	El leon debe avanzar hasta encontrar a la gacela."
+        + "\n"
+        + "\n"
+        + "	Una vez se han encontrado empieza la accion."
+        + "\n"
+        + "	Si la gacela ve al leon podra huir."
+        + "\n"
+        + "	Cuando el leon encuentra a la gacela gana acciones nuevas."
+        + "\n"
+        + "\n"
+        + "	- Acechar: avanza una casilla en silencio."
+        + "\n"
+        + "	- Esconderse: se agazapa escondido para que no le vean."
+        + "\n"
+        + "	- Perseguir: avanza dos casillas si le han visto."
+        + "\n"
+        + "	Y Cazar, que gana si esta en la casilla contigua a la gacela.");
+       
         
       //Realentizar X3?
         try {
@@ -118,12 +131,15 @@ public class Caceriaa {
 		}
         
         //Selecion de acciones y turnos
-        System.out.println(" ");
-        System.out.println("		Para escoger opciones se debe escribir el numero de la accion. ");
-        System.out.println("		Los turnos seran primero del leon y despues de la gazela.");
-        System.out.println("		Si la gazela escapa pero no ha comido suficiente se volvera a empezar hasta que haya comido y bebido suficiente.");
-        System.out.println(" ");
-        System.out.println(" ");
+        interfaz.jTextArea1.setText("\n"
+        + "	Para escoger opciones se debe escribir el numero de la accion. "
+        +        "\n"
+        + "	Los turnos seran primero del leon y despues de la gazela."
+        + "\n"
+        + "	Si la gazela escapa pero no ha comido suficiente se volvera a empezar"
+        + "\n"
+        + "     hasta que haya comido y bebido suficiente."
+        + "\n");
         
        
       //Realentizar X4?
@@ -156,9 +172,11 @@ public class Caceriaa {
         	if(Leon.cazando == false) {
         		//opciones sin cazar
         		 
-        	System.out.println("El Leon no ve todavia a la gacela.");
-        				System.out.println("Accion leon:");
-        				System.out.println("1. Avanzar.");
+        	interfaz.jTextArea1.setText("El Leon no ve todavia a la gacela."
+                                        + "\n"
+        				+ "Accion leon:"
+                                        + "\n"
+        				+ "1. Avanzar.");
                                         //Realentizar?
                                          
                		 	
@@ -184,14 +202,15 @@ public class Caceriaa {
         							 }
         	//opciones cazando.
         	 else {
-        		 	System.out.println("El leon ve a la gacela a "+ 
-                                        (Leon.posGacela-Leon.posicion)
-                                        +", es hora de cazar.");
-        			System.out.println("Accion leon:");
-        			System.out.println("1. Acechar.");
-        			System.out.println("2. Esconderse. ");
-        			System.out.println("3. Perseguir.");
-        			System.out.println("4. Cazar ");
+                    distancia2 =(Leon.posGacela - Leon.posicion);
+        interfaz.jTextArea1.setText("El leon ve a la gacela a " 
+                                        + distancia2
+                                        + ", es hora de cazar."
+                                        + "Accion leon:"
+                                        + "1. Acechar."
+                                        + "2. Esconderse. "
+                                        + "3. Perseguir."
+                                        + "4. Cazar ");
                                     
                                         
         			
@@ -223,7 +242,7 @@ public class Caceriaa {
         		  				Leon.Cazar();
         		  				leoncorrecto = true;
         		  				break;
-        		  default:System.out.println("Accion no existente ");
+        		  default:interfaz.jTextArea1.setText("Accion no existente ");
         		  				break;
         		  				}
         			}
@@ -278,11 +297,11 @@ public class Caceriaa {
         
         
         //chequeos de victoria.
-        if(Leon.cazado == true) {System.out.println("El leon gana.");
+        if(Leon.cazado == true) {interfaz.jTextArea1.setText("El leon gana.");
         						 victoria=true;
         						}
         
-        if(Gacela.huyendo >= 5) {System.out.println("La gacela ha escapado");
+        if(Gacela.huyendo >= 5) {interfaz.jTextArea1.setText("La gacela ha escapado");
                                                            Leon.setPosicion(0);
         						Gacela.setPosicion(x);
         						Gacela.setPanico(false);
@@ -291,7 +310,7 @@ public class Caceriaa {
         						}
         
         if(Gacela.huyendo >= 5 & Gacela.comida >= 3 & Gacela.bebida >= 3) {
-        	System.out.println("La gacela ha ganado");
+        	interfaz.jTextArea1.setText("La gacela ha ganado");
         	victoria=true;
         																  }
         //fin de turno
