@@ -10,6 +10,7 @@ public class Leon extends Felino implements Depredador{
   int   posicion;
   int 	posGacela;
   int   esconderse;
+  String textesconderse="";
   boolean cazando;
   boolean sigilo;
   boolean cazado;
@@ -61,7 +62,7 @@ public class Leon extends Felino implements Depredador{
     	if(esconderse > 0) {
     		sigilo = true;
     		ocultado = true;}
-    	else {interfaz.setjTextArea1("El leon se entretuvo mirando mariposas.");}
+    	else {textesconderse="El leon se entretuvo mirando mariposas.";}
         
     }
 

@@ -19,6 +19,7 @@ public class Gacela extends Bovido implements Presa{
  boolean panico;
  boolean observado;
  boolean leonEscondido;
+ String textobservado ="";
  
  
     public Gacela (int posicion, int comida, int bebida, int observar,int huyendo,boolean panico,boolean observado){
@@ -51,12 +52,12 @@ public class Gacela extends Bovido implements Presa{
     public void Observar() {
     	if(observar > 0){observado = true; 
     				    if(leonEscondido == false) {
-    						if(posicion - posLeon <= 5) {panico = true; System.out.println("La gacela ha visto un leon a " + (posicion-posLeon) + ".");}
-    					 	else {System.out.println("La gacela no ha visto ningun peligro.");}
+    						if(posicion - posLeon <= 5) {panico = true; textobservado="La gacela ha visto un leon a " + (posicion-posLeon) + ".";}
+    					 	else {textobservado="La gacela no ha visto ningun peligro.";}
     											 }
-    				    else {System.out.println("La gacela no ha visto ningun peligro.");}
+    				    else {textobservado="La gacela no ha visto ningun peligro.";}
     					}
-    	else {System.out.println("La gacela se entretuvo mirando mariposas.");}
+    	else {textobservado="La gacela se entretuvo mirando mariposas.";}
        
     }
 

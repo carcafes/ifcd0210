@@ -168,7 +168,7 @@ public class Caceriaa {
         //acciones leon
         
         do {
-        	 
+            Leon.posGacela = Gacela.posicion;
         	if(Leon.cazando == false) {
         		//opciones sin cazar
         		 
@@ -178,7 +178,7 @@ public class Caceriaa {
                                         + "\n"
         				+ "1. Avanzar.");
                                         //Realentizar?
-                                         
+                                         leon = interfaz.leon;
                		 	
                                         try {
                                          TimeUnit.SECONDS.sleep(5);
@@ -186,17 +186,23 @@ public class Caceriaa {
 			
                                             e.printStackTrace();
                                                 }
-        				while(leon == 0){leon = interfaz.leon;}
+        				
         														
         		
         
-    
+                                        
         		switch(leon){
-        				case 1: leon = 1;
+        				case 1: ;
         						Leon.Avanzar();
         						leoncorrecto = true;
         						break;
         		default:System.out.println("Accion no existente.");
+                        try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         						break;
         					}
         							 }
@@ -206,11 +212,17 @@ public class Caceriaa {
         interfaz.jTextArea1.setText("El leon ve a la gacela a " 
                                         + distancia2
                                         + ", es hora de cazar."
+                                                + "\n"
                                         + "Accion leon:"
+                                                + "\n"
                                         + "1. Acechar."
+                                                + "\n"
                                         + "2. Esconderse. "
+                                                + "\n"
                                         + "3. Perseguir."
-                                        + "4. Cazar ");
+                                                + "\n"
+                                        + "4. Cazar "
+                                                + "\n");
                                     
                                         
         			
@@ -233,6 +245,13 @@ public class Caceriaa {
         		  		case 2: leon = 2;
         		  				Leon.Esconderse();
         		  				leoncorrecto = true;
+                                                        interfaz.jTextArea1.setText(Leon.textesconderse);
+                                                        try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         		  				break;
         		  		case 3: leon = 3;
         		  				Leon.Perseguir();
@@ -243,6 +262,12 @@ public class Caceriaa {
         		  				leoncorrecto = true;
         		  				break;
         		  default:interfaz.jTextArea1.setText("Accion no existente ");
+                          try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         		  				break;
         		  				}
         			}
@@ -299,9 +324,21 @@ public class Caceriaa {
         //chequeos de victoria.
         if(Leon.cazado == true) {interfaz.jTextArea1.setText("El leon gana.");
         						 victoria=true;
+                                                         try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         						}
         
         if(Gacela.huyendo >= 5) {interfaz.jTextArea1.setText("La gacela ha escapado");
+        try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
                                                            Leon.setPosicion(0);
         						Gacela.setPosicion(x);
         						Gacela.setPanico(false);
@@ -311,6 +348,12 @@ public class Caceriaa {
         
         if(Gacela.huyendo >= 5 & Gacela.comida >= 3 & Gacela.bebida >= 3) {
         	interfaz.jTextArea1.setText("La gacela ha ganado");
+                try {
+                                         TimeUnit.SECONDS.sleep(2);
+                                             } catch (InterruptedException e) {
+			
+                                            e.printStackTrace();
+                                                }
         	victoria=true;
         																  }
         //fin de turno
