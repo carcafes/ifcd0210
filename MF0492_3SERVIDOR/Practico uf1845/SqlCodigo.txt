@@ -1,0 +1,32 @@
+CREATE TABLE CLIENTES (ID INT, Nombre varchar(20), Apellidos varchar(20), NombreCompleto varchar(40))
+
+INSERT INTO `clientes` VALUES(1,Carlos,Cosme)
+INSERT INTO `clientes` VALUES(2,Javier,Cosme)
+INSERT INTO `clientes` VALUES(3,noelia,Cosme)
+-----------------------------------------------------
+CREATE TABLE CuentaBancaria (ID int,Dueno varchar(40),Tipo Varchar(15),TipoDueno Varchar(15),Pais varchar(2),IBAN int,Entidad INT,Oficina Int, DigitoDeControl Int, CuentaDelBanco Bigint,CuentaBancoCompleta Varchar(50))
+INSERT INTO CuentaBancaria (1,Carlos Cosme,Debito,Cliente,ES,62,1111,2222,33,0123456789)
+------------------------------------------------
+CREATE TABLE Personal (ID int, NombreCompleto Varchar(40),FechaDeNacimiento Date,FechaDeInicio Date, Puesto varchar(20)) 
+INSERT INFO Personal (1,Pepe Perez,1998-05-14,2019-05-13,Cajero)
+--------------------------------------------
+Create Function BuscarNombre(numero INT) Returns varchar(40)
+BEGIN
+DECLARE resultado VARCHAR(40) DEFAULT '';
+
+Select NombreCompleto INTO resultado From CLIENTES WHERE ID = PID;
+
+RETURN resultado;
+END
+--------------------------------------------------------
+Create Trigger JuntarNombre
+BEFORE INSERT
+For each row
+BEGIN
+SET NEW.NombreCompleto = CONCAT(New.Nombre, ' ', New.Apellido);
+END;
+
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+SELECT * FROM `clientes`
+GO;
