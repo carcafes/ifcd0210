@@ -13,4 +13,9 @@ Select NombreCompleto INTO resultado From CLIENTES WHERE ID = PID;
 RETURN resultado;
 END
 --------------------------------------------------------
-Create Trigger
+Create Trigger JuntarNombre
+BEFORE INSERT
+For each row
+BEGIN
+SET NEW.NombreCompleto = CONCAT(New.Nombre, ' ', New.Apellido);
+END;
