@@ -19,3 +19,7 @@ For each row
 BEGIN
 SET NEW.NombreCompleto = CONCAT(New.Nombre, ' ', New.Apellido);
 END;
+
+---------------------------------------------------------------------------
+ DROP TABLE IF EXISTS producto;
+ CREATE TABLE producto (id INT, codigo varchar(20), nombre varchar(20), precio DOUBLE,stock INT);
